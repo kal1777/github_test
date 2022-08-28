@@ -8,7 +8,7 @@ phases:
     commands:
       - echo Build Starting on `date`
     #  - cd DeployServer
-      - cd github_test
+    #  - cd github_test
       - chmod +x ./gradlew
       - ./gradlew build
   post_build:
