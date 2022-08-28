@@ -7,15 +7,16 @@ phases:
   build:
     commands:
       - echo Build Starting on `date`
-      - cd DeployServer
+    #  - cd DeployServer
+      - cd github_test
       - chmod +x ./gradlew
       - ./gradlew build
   post_build:
     commands:
-      - echo $(basename ./DeployServer/build/libs/*.jar)
+      - echo $(basename ./github_test/build/libs/*.jar)
 artifacts:
   files:
-    - DeployServer/build/libs/*.jar
-    - DeployServer/scripts/**
-    - DeployServer/appspec.yml
+    - github_test/build/libs/*.jar
+    - github_test/scripts/**
+    - github_test/appspec.yml
   discard-paths: yes
