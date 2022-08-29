@@ -13,10 +13,11 @@ phases:
       - ./gradlew build
   post_build:
     commands:
-      - echo $(basename ./github_test/build/libs/*.jar)
+#      - echo $(basename ./github_test/build/libs/*.jar)
+       - echo $(basename ./build/libs/*.jar)
 artifacts:
   files:
-    - github_test/build/libs/*.jar
-    - github_test/scripts/**
-    - github_test/appspec.yml
+    - /build/libs/*.jar
+    - /scripts/**
+    - /appspec.yml
   discard-paths: yes
