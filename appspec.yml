@@ -12,15 +12,15 @@ hooks:
       timeout: 3000
       runas: root
   AfterInstall:
-    - location: initialize.sh
+    - location: /home/ubuntu/build/scripts/initialize.sh
       timeout: 3000
       runas: root
   ApplicationStart:
-    - location: server_start.sh
+    - location: /home/ubuntu/build/scripts/server_start.sh
       timeout: 3000
       runas: root
   ApplicationStop:
-    - location: server_stop.sh
+    - location: /home/ubuntu/build/scripts/server_stop.sh
       timeout: 3000
       runas: root
 
