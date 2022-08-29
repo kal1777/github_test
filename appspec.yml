@@ -38,7 +38,19 @@ permissions:
     group: ubuntu
 
 hooks:
-  ApplicationStart:
-    - location: scripts/deploy.sh
-      timeout: 60
-      runas: ubuntu
+    BeforeInstall:
+      - location: server_clear.sh
+        timeout: 3000
+        runas: root
+    AfterInstall:
+      - location: initialize.sh
+        timeout: 3000
+        runas: root
+    ApplicationStart:
+      - location: scripts/deploy.sh
+        timeout: 60
+        runas: ubuntu
+    ApplicationStop:
+      - location: server_stop.sh
+        timeout: 3000
+        runas: root
