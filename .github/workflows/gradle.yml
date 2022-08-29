@@ -17,7 +17,7 @@ permissions:
   contents: read
   
 env:
-concurrency: pre-38
+  S3_BUCKET_NAME: pre-38
 
 jobs:
   build:
